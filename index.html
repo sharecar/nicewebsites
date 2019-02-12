@@ -8,17 +8,21 @@ title: Ordlista 19
 
  {% for website in site.websites %}
 
-    <div class="grid-item">
+<a href="{{ website.permalink }}">
 
-      <img class="grid-item--image u-objectfit--cover" src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
+  <div class="grid-item">
 
-        <div class="grid-item_information-container">
-        <h2 class="website-title"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
-          <p class="website-desc">{{ website.metadescription }}</p>
-            <a href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
-        </div>
+    <img class="grid-item--image u-objectfit--cover" src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
 
-    </div>
+      <div class="grid-item_information-container">
+      <h2 class="website-title"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
+        <p class="website-desc">{{ website.metadescription }}</p>
+          <a href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
+      </div>
+
+  </div>
+
+</a>
 
  {% endfor %}
 

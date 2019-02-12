@@ -54,13 +54,15 @@ a {
     padding: $gutter;
     min-height:100vh;
     height: auto;
-
-    .grid-item {
-      flex: 0 0 355px;
-      height: 355px;
-      border: 1px solid $color_black;
-    }
 }
+
+.grid-item {
+  flex: 0 0 355px;
+  height: 355px;
+  border: 1px solid black;
+}
+
+
 
 
 @media screen and (max-width: 480px) {

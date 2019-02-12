@@ -39,6 +39,7 @@ a {
   height: auto; }
 
 .grid-item {
-  flex: 0 0 355px;
+  flex: 1 0 355px;
   height: 355px;
-  border: 1px solid black; }
+  border: 1px solid black;
+  margin: 10px; }

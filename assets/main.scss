@@ -1,6 +1,5 @@
 ---
 ---
-
 $general_font_size: 10px;
 $gutter: 10px;
 $vertical_spacing: $gutter*2;
@@ -57,13 +56,8 @@ a {
 }
 
 .grid-item {
-  flex: 0 0 355px;
+  flex: 1 0 355px;
   height: 355px;
   border: 1px solid black;
-}
-
-
-
-
-@media screen and (max-width: 480px) {
+  margin: $gutter;
 }

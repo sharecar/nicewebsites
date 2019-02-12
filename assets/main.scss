@@ -43,10 +43,23 @@ a {
   }
 }
 
-.wrapper {
-    max-width: 760px;
-    position: absolute;
-    padding: 0 20px
+.grid {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    flex-flow: row wrap;
+    padding: $gutter;
+    min-height:100vh;
+    height: auto;
+
+    .grid-item {
+      flex: 0 0 355px;
+      height: 355px;
+      border: 1px solid $color_black;
+    }
 }
 
 

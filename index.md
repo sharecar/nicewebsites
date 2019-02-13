@@ -23,7 +23,7 @@ title: Ordlista 19
 <ul class="tagfilter">
 	<li class="tag-all"><input type="checkbox" name="all" value="all" checked="checked" class="allcheckbox" />All</li>
 {% for tag in my_array %}
-	<li class="tag-button"><input type="checkbox" name="{{ tag }}" value="{{ tag }}" class="filtercheckbox" />{{ tag }}</li>
+	<li class="tag-button"><input type="checkbox" name="{{ tag }}" value="{{ tag }}" class="filtercheckbox" /><span>{{ tag }}</span></li>
 {% endfor %}
 </ul>
 </div>

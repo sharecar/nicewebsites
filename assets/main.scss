@@ -19,7 +19,7 @@ html, body {
   margin:0;
   padding: 0;
   font-size: $general_font_size * 1.6;
-  background-color: $color--grey;
+  background-color: $color--white;
 }
 
 #header {
@@ -117,20 +117,33 @@ a {
     }
 }
 .grid-item_information-container {
-  background-color: white;
+  background-color: $color--black;
   padding: $gutter;
   border-bottom: 1px solid black;
+  color: $color--white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+  a {
+    color: $color--white;
+  }
 }
 
+.grid-item:hover .grid-item_information-container  {
+  visibility: visible;
+}
 
 .website-title {
   font-size: $general_font_size * 4;
   text-transform: uppercase;
   font-weight: bold;
+  color: $color--white;
 }
 
 .website-desc {
   font-size: $general_font_size * 1.4;
+  color: $color--white;
 }
 
 .grid-item_read-more {
@@ -138,6 +151,7 @@ a {
   position: absolute;
   right: 10px;
   bottom: 20px;
+  color: $color--white;
 }
 
 .u-objectfit--cover { width:100%;height:100%;object-fit: cover; }

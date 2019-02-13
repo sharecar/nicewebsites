@@ -38,16 +38,18 @@ title: Ordlista 19
 
 		 		<img class="grid-item--image u-objectfit--cover" src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
 
-          <div class="grid-item_information-container">
-
+      <div class="grid-item_information-container">
+            <a href="{{ website.permalink }}">
   		      <h2 class="website website-title"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
 
   		        <p class="website-desc">{{ website.metadescription }}</p>
 
   		      <a href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
+</a>
+      </div>
 
-          </div>
+      </div>
 
- 	</div>
+  </a>
 
 		{% endfor %}

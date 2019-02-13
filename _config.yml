@@ -35,9 +35,10 @@ collections:
   websites:
     output: true
 
-    sass:
-      sass_dir: _sass
-      style: compressed
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

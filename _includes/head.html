@@ -13,6 +13,65 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
     <script type="text/javascript">
+        $(function() {
+            console.log( "ready!" );
 
+            $('ul.tagfilter').find('input:checkbox').each(function() {                
+                $(this).change(function() {
+                    filterList($(this));
+            
+                    console.log($(this).val())
+                });
+            });
+
+            var activefilters = new Array();
+
+            function filterList(id){
+                if(id.val() == 'all')
+                {
+                    $('.filtercheckbox').prop("checked", false);
+                    activefilters = [];
+                }
+
+                if(id.val() != 'all')
+                {
+                    if(!$(id).prop("checked"))
+                    {
+                        var index = activefilters.indexOf(id.val());
+                        console.log(index)
+                        if (index > -1) {
+                          activefilters.splice(index, 1);
+                        }
+
+                    }else{
+                        activefilters.push(id.val());
+                    }
+                    $('.allcheckbox').prop("checked", false);
+                    
+                }
+                if(activefilters.length == 0){
+                   $('.allcheckbox').prop("checked", true); 
+                }
+
+
+                $('div.mainlist').find('div.websiteitem').each(function(){
+                    for(i = 0; i < activefilters.length; i++){
+                        var visible = false;
+                        console.log(activefilters[i]);
+                        if($(this).data('tags').includes(activefilters[i])){
+                           visible = true;
+                        }
+
+                        if(visible) {
+                            $(this).show();
+                        }else{
+                            $(this).hide();
+                        }
+                    }     
+                });
+                
+            }
+
+        });
     </script>
 </head>

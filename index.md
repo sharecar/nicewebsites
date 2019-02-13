@@ -29,6 +29,7 @@ title: Ordlista 19
 	<div class="mainlist">
 		{% for website in site.websites %}
 		 	<div class="websiteitem" data-tags="{{website.metatags}}">
+		 		<p>{{website.metatags}}</p>
 		 		<img src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
 		      <h2 class="website"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
 		        <p>{{ website.metadescription }}</p>

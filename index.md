@@ -19,8 +19,9 @@ title: Ordlista 19
 
 {% assign my_array = foo | remove: " " | split: "," %}
 {% assign my_array = my_array | uniq %}
-
+<h3>Filter:</h3>
 <ul class="tagfilter">
+
 	<li class="tag-all"><input type="checkbox" name="all" value="all" checked="checked" class="allcheckbox" />All</li>
 {% for tag in my_array %}
 	<li class="tag-button"><input type="checkbox" name="{{ tag }}" value="{{ tag }}" class="filtercheckbox" /><span>{{ tag }}</span></li>

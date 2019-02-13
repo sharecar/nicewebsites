@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Turd</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	  <meta name="description" content="Jobba hemma är min grej">
+    <meta name="keywords" content="brutal, minimalistic, ugly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function() {
+            console.log( "ready!" );
+
+            $('ul.tagfilter').find('input:checkbox').each(function() {                
+                $(this).change(function() {
+                    filterList($(this));
+                });
+            });
+
+            var activefilters = new Array();
+
+            function filterList(id){
+                if(id.val() == 'all')
+                {
+                    $('.filtercheckbox').prop("checked", false);
+
+                    activefilters = [];
+                    
+                }else                {
+                    if(!$(id).prop("checked"))
+                    {
+                        var index = activefilters.indexOf(id.val());
+                        if (index > -1) {
+                          activefilters.splice(index, 1);
+                        }
+
+                    }else{
+                        activefilters.push(id.val());
+                    }
+                    $('.allcheckbox').prop("checked", false);
+                }
+
+                if(activefilters.length == 0){
+                   $('.allcheckbox').prop("checked", true); 
+                }
+
+                console.log(activefilters);
+
+                if(activefilters.length != 0){
+                    $('div.mainlist').find('div.websiteitem').each(function(){
+                        $(this).hide();
+                        
+                        var visible = false;
+
+                        for(i = 0; i < activefilters.length; i++){
+                            if($(this).data('tags').includes(activefilters[i])){
+                               visible = true;
+                            }
+                        }
+
+                        if(visible) {
+                            $(this).show();
+                        }     
+                    });
+                }else{
+                    $('div.mainlist').find('div.websiteitem').each(function(){
+                        $(this).show();
+                    });
+                }
+            }
+
+        });
+    </script>
+</head>
+
+<header id="header">
+	<h1 id="logo"><a href="/">NICEWEBSITES</a></h1>
+	<h2>Nice websites listed, for inspirational purpose only.</h2>
+	<!-- <nav id="sitenavigation">
+		<ul class="nav nav-center">
+			<li><a href="/kontakt">Kontakt</a></li>
+		</ul>
+	</nav> -->
+</header>
+
+	<body>
+
+	<div class="wrapper">
+	<nav class="breadcrumb">
+	<a href="/">Start</a>&nbsp→&nbsp<span>Turd</span>
+</nav>
+
+<section class="section">
+	<h1 class="page-website-title">Turd</h1>
+	<img src="/siteimages/turd.jpg" />
+	<div class="bread">
+	<p>Mer innehåll - markdown</p>
+
+	</div>
+	</section>
+
+	</div>
+
+
+	</body>
+</html>

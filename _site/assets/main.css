@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  font-family: "Chakra Petch", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #FFFFFF; }
+
+ul {
+  padding: 0; }
+
+#header {
+  display: flex;
+  justify-content: flex-start;
+  vertical-align: center;
+  flex-flow: column;
+  text-align: left;
+  z-index: 3;
+  height: auto;
+  padding-left: 20px;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  background-color: white; }
+  #header #logo {
+    margin: 0;
+    padding: 0;
+    font-size: 24px; }
+  #header h2 {
+    font-size: 20px; }
+
+.u-text--large {
+  font-size: 70px; }
+
+h1 {
+  font-size: 48px;
+  word-break: break-all; }
+
+h2 {
+  font-size: 36px;
+  padding: 0;
+  margin: 0; }
+
+h3 {
+  font-size: 24px;
+  padding: 0;
+  margin: 0; }
+
+p {
+  font-size: 20px;
+  line-height: 25px; }
+
+a {
+  color: #000000;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.grid {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: auto;
+  padding: 10px; }
+
+.section {
+  padding: 10px; }
+
+.grid-item {
+  flex: 0 0 355px;
+  height: auto;
+  padding: 10px;
+  cursor: pointer;
+  position: relative; }
+  .grid-item img {
+    height: 355px; }
+
+.grid-item--image {
+  -webkit-filter: grayscale(70%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+  transition: ease-in-out 0.3s; }
+  .grid-item--image:hover {
+    -webkit-filter: grayscale(0%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%); }
+
+.grid-item_information-container {
+  background-color: #000000;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden; }
+  .grid-item_information-container a {
+    color: #FFFFFF; }
+
+.grid-item:hover .grid-item_information-container {
+  visibility: visible; }
+
+.website-title {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #FFFFFF; }
+
+.website-desc {
+  font-size: 14px;
+  color: #FFFFFF; }
+
+.grid-item_read-more {
+  font-size: 14px;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  color: #FFFFFF; }
+
+.u-objectfit--cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+.u-objectfit--contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; }
+
+.filter-row {
+  z-index: 2;
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: 0; }
+  .filter-row ul li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin-right: 10px; }
+
+.tag-button span {
+  text-transform: capitalize; }
+
+.breadcrumb {
+  z-index: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  padding: 20px; }
+  .breadcrumb ul li {
+    display: inline-block;
+    margin-right: 10px; }

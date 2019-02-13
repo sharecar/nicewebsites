@@ -4,7 +4,7 @@
 $general_font_size: 10px;
 $gutter: 10px;
 $vertical_spacing: $gutter*2;
-$primary_font_family: sans-serif;
+$primary_font_family: 'Chakra Petch', sans-serif;
 
 $color--black: #000000;
 $color--white: #FFFFFF;
@@ -18,7 +18,7 @@ html, body {
   margin:0;
   padding: 0;
   font-size: $general_font_size * 1.6;
-  background-color: #e9e9e9;
+  background-color: white;
 }
 
 .u-text--large {
@@ -31,9 +31,13 @@ h1{
 }
 h2{
     font-size: $general_font_size * 3.6;
+    padding: 0;
+    margin: 0;
 }
 h3{
     font-size: $general_font_size * 2.4;
+    padding: 0;
+    margin: 0;
 }
 p {
   font-size: $general_font_size * 2;
@@ -56,34 +60,58 @@ a {
     display: -webkit-flex;
 
     flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-    min-height:100vh;
+    align-items:flex-start;
+    align-content:flex-start;
+
     height: auto;
     padding: $gutter;
 }
 
 .grid-item {
-  flex: 0 0 25%;
-  height: 400px;
+  flex: 1 0 355px;
+  height: auto;
   padding: $gutter;
+  cursor: pointer;
+  position: relative;
+  img {
+    height: 355px;
+  }
 }
 
 .grid-item--image {
-
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: ease-in-out 0.3s;
+    &:hover {
+      -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+    }
 }
 .grid-item_information-container {
   background-color: white;
   padding: $gutter;
+  border-bottom: 1px solid black;
 }
-
 
 
 .website-title {
-  font-size: 1rem;
+  font-size: $general_font_size * 4;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .website-desc {
-  font-size: 1rem;
+  font-size: $general_font_size * 1.4;
+}
+
+.grid-item_read-more {
+  font-size: $general_font_size * 1.4;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
 }
 
 .u-objectfit--cover { width:100%;height:100%;object-fit: cover; }

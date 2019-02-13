@@ -7,6 +7,7 @@ title: Ordlista 19
 <div style="width: 100%;">
 
 
+<div class="filter-row">
 
 {% assign foo = "" %}
 
@@ -25,17 +26,27 @@ title: Ordlista 19
 	<li class="tag-button"><input type="checkbox" name="{{ tag }}" value="{{ tag }}" class="filtercheckbox" />{{ tag }}</li>
 {% endfor %}
 </ul>
-
-	<div class="mainlist">
-		{% for website in site.websites %}
-		 	<div class="websiteitem" data-tags="{{website.metatags}}">
-		 		<img src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
-		      <h2 class="website"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
-		        <p>{{ website.metadescription }}</p>
-		      <a href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
-		 	</div>
-
-		{% endfor %}
-	</div>
 </div>
 
+	<div class="mainlist grid">
+		{% for website in site.websites %}
+
+    <a href="{{ website.permalink }}">
+
+		 	<div class="websiteitem grid-item" data-tags="{{website.metatags}}">
+
+		 		<img class="grid-item--image u-objectfit--cover" src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
+
+          <div class="grid-item_information-container">
+
+  		      <h2 class="website website-title"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
+
+  		        <p class="website-desc">{{ website.metadescription }}</p>
+
+  		      <a href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
+
+          </div>
+
+ 	</div>
+
+		{% endfor %}

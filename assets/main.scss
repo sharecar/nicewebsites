@@ -5,21 +5,23 @@ $general_font_size: 10px;
 $gutter: 10px;
 $vertical_spacing: $gutter*2;
 $primary_font_family: 'Chakra Petch', sans-serif;
-
 $color--black: #000000;
 $color--white: #FFFFFF;
 $color--grey: #e9e9e9;
 
-*, html, body {
+*,
+body,
+html {
   box-sizing: border-box !important;
 }
 
-html, body {
+body,
+html {
   font-family: $primary_font_family;
-  margin:0;
+  margin: 0;
   padding: 0;
   font-size: $general_font_size * 1.6;
-  background-color: $color--white;
+  background-color: #F4F4F6;
 }
 
 ul {
@@ -39,34 +41,39 @@ ul {
   padding-bottom: $gutter *2;
   padding-top: $gutter;
   background-color: white;
+
   #logo {
     margin: 0;
     padding: 0;
     font-size: 24px;
   }
 
-    h2 {
-      font-size: 20px;
+  h2 {
+    font-size: 20px;
   }
 }
+
 .u-text--large {
   font-size: $general_font_size * 7;
 }
 
-h1{
-    font-size: $general_font_size * 4.8;
-    word-break: break-all;
+h1 {
+  font-size: $general_font_size * 4.8;
+  word-break: break-all;
 }
-h2{
-    font-size: $general_font_size * 3.6;
-    padding: 0;
-    margin: 0;
+
+h2 {
+  font-size: $general_font_size * 3.6;
+  padding: 0;
+  margin: 0;
 }
-h3{
-    font-size: $general_font_size * 2.4;
-    padding: 0;
-    margin: 0;
+
+h3 {
+  font-size: $general_font_size * 2.4;
+  padding: 0;
+  margin: 0;
 }
+
 p {
   font-size: $general_font_size * 2;
   line-height: $general_font_size * 2.5;
@@ -75,62 +82,58 @@ p {
 a {
   color: $color--black;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
 }
 
 .grid {
-
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-
-    flex-flow: row wrap;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    align-items:flex-start;
-    align-content:flex-start;
-
-    height: auto;
-    padding: $gutter;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: auto;
+  margin-top: -1px;
 }
 
 .section {
-  padding: $gutter;
+  padding-top: 0;
 }
 
 .grid-item {
   flex: 1 0 355px;
-  margin: $gutter;
   cursor: pointer;
   position: relative;
-    img {
-      width: 100%;
-      height: 355px;
-    }
+  border: 1px solid black;
+  margin-left: -1px;
+
+  img {
+    width: 100%;
+    height: 355px;
+  }
 }
 
 .grid-item--image {
-  -webkit-filter: grayscale(70%);
-  filter: grayscale(70%);
-      &:hover {
-        -webkit-filter: grayscale(0%);
-        filter: grayscale(0%);
-      }
+  &:hover {}
 }
+
 .grid-item_information-container {
   visibility: hidden;
   display: none;
+
   a {
     color: $color--white;
   }
 }
 
-.grid-item:hover .grid-item_information-container  {
+.grid-item:hover .grid-item_information-container {
   display: block;
   visibility: visible;
   background-color: $color--black;
@@ -142,20 +145,19 @@ a {
   height: 100%;
   padding: $gutter*2;
 }
-
 @media only screen and (max-width: 1024px) {
-.grid-item:hover .grid-item_information-container {
-  display: block;
-  visibility: visible;
-  background-color: $color--grey;
-  color: $color--white;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  padding: $gutter*2;
-}
+  .grid-item:hover .grid-item_information-container {
+    display: block;
+    visibility: visible;
+    background-color: $color--grey;
+    color: $color--white;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: $gutter*2;
+  }
 }
 
 .website-title {
@@ -177,13 +179,12 @@ a {
   bottom: 20px;
   color: $color--white;
 }
-
 @media only screen and (max-width: 1024px) {
-  .grid-item_read-more, .website-desc {
+  .grid-item_read-more,
+  .website-desc {
     color: $color--black;
   }
 }
-
 @media only screen and (max-width: 1024px) {
   .grid-item_information-container {
     display: block;
@@ -196,19 +197,28 @@ a {
     width: 100%;
     height: auto;
     padding: $gutter*2;
+
     a {
       color: $color--black;
     }
   }
 }
 
+.u-objectfit--cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-
-.u-objectfit--cover { width:100%;height:100%;object-fit: cover; }
-.u-objectfit--contain { width:100%;height:100%;object-fit: contain; }
+.u-objectfit--contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .filter-row {
   z-index: 2;
+  position: -webkit-sticky;
   position: sticky;
   display: flex;
   justify-content: flex-start;
@@ -217,9 +227,9 @@ a {
   background-color: $color--white;
   color: $color--black;
   border-bottom: 1px solid $color--black;
-  padding: $gutter*2;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 $gutter*2;
+  top: 0;
+
   ul li {
     margin: 0;
     padding: 0;
@@ -242,8 +252,24 @@ a {
   color: $color--black;
   border-bottom: 1px solid $color--black;
   padding: $gutter*2;
+
   ul li {
     display: inline-block;
     margin-right: 10px;
   }
+}
+
+.page-website-title {
+  width: 100%;
+  border-bottom: 1px solid $color--black;
+  background-color: $color--white;
+  margin: 0;
+  padding: $gutter;
+}
+
+.full-page-bg {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: $gutter*2;
 }

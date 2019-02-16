@@ -1,29 +1,53 @@
 ---
 layout: default
-title: Ordlista 19
-
+title: Nice Websites
 ---
 
-<div class="grid">
+<div style="width: 100%;">
 
- {% for website in site.websites %}
 
-<a href="{{ website.permalink }}">
+  <div class="filter-row">
 
-  <div class="grid-item">
+    {% assign foo = "" %}
 
-    <img class="grid-item--image u-objectfit--cover" src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
+    {% for website in site.websites %}
 
-      <div class="grid-item_information-container">
-      <h2 class="website-title"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
-        <p class="website-desc">{{ website.metadescription }}</p>
-          <a class="grid-item_read-more" href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
-      </div>
+    {% assign foo = foo | append: website.metatags | append:"," %}
 
+    {% endfor %}
+
+    {% assign my_array = foo | remove: " " | split: "," %}
+    {% assign my_array = my_array | uniq %}
+    <h3>Filter:</h3>
+    <ul class="tagfilter">
+      <li class="tag-all"><label><input type="checkbox" name="all" value="all" checked="checked" class="allcheckbox" /><span>All</span></label></li>
+
+      {% for tag in my_array %}
+      <li class="tag-button"><label><input type="checkbox" name="{{ tag }}" value="{{ tag }}" class="filtercheckbox" /><span>{{ tag }}</span></label></li>
+      {% endfor %}
+    </ul>
   </div>
 
-</a>
+  <div class="mainlist grid">
+    {% for website in site.websites %}
 
- {% endfor %}
+    <a href="{{ website.permalink }}">
 
-</div>
+      <div class="websiteitem grid-item" data-tags="{{website.metatags}}">
+
+        <img class="grid-item--image u-objectfit--cover" src="/siteimages/{{ website.permalink | remove: "/" }}.jpg" />
+
+        <a href="{{ website.permalink }}">
+
+          <div class="grid-item_information-container">
+            <a href="{{ website.permalink }}">
+              <h2 class="website website-title"><a href="{{ website.permalink }}">{{ website.title }}</a></h2>
+              <p class="website-desc">{{ website.metadescription }}</p>
+              <a href="{{ website.permalink }}">Läs mer om: {{ website.title }}</a>
+            </a>
+          </div>
+        </a>
+      </div>
+    </a>
+
+    {% endfor %}

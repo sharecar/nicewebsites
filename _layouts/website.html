@@ -7,8 +7,8 @@ layout: default
 
 <section class="section">
 	<h1 class="page-website-title">{{ page.title }}</h1>
-	<img src="/siteimages/{{ page.permalink | remove: "/" }}.jpg" />
+	<img class="full-page-bg" src="/siteimages/{{ page.permalink | remove: "/" }}.jpg" />
 	<div class="bread">
-	{{ page.content }}
+		{{ page.content }}
 	</div>
-	</section>
+</section>
